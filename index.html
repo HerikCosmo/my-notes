@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,19 @@
     
 </head>
 <body>
-    <h1>MyNotes</h1>
-    <input type="text" id='input'><button>+</button>
-
-    <p id='p'>a</p>
+    <div id="container">
+        <header>
+            <h1>MyNotes</h1>
+            <div id="newNote">
+                <input type="text" name="key" id="key">
+                <input type="text" name="value" id="value">
+                <button id="button">+</button>
+                <button id="delete">delete</button>
+            </div>
+        </header>
+        <div id='content'>  
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

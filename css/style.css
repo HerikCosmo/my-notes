@@ -1,0 +1,15 @@
+body{
+    background: url(../img/plywood_diff_1k.jpg);
+}
+
+#content{
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    flex-wrap: wrap;
+}
+.post-it{
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
