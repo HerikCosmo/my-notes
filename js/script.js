@@ -1,39 +1,32 @@
-document.getElementById('button').addEventListener("click", function () {
-    let key = document.getElementById('key').value
-    let value = document.getElementById('value').value
-    localStorage.setItem(key, value)
-    atualiza()
-})
+window.addEventListener('load', function(){
+    let note = document.getElementById('note')
+    let addNote = document.getElementById('addNote')
+    let clearNotes = document.getElementById('clearNotes')
+    let content = document.getElementById('content')
 
-window.addEventListener('storage', function(event){
-    let key = event.key
-    let newValue = event.newValue
-    let oldValue = event.oldValue
-    let storageArea = event.storageArea
-    key.innerHTML(key+"\n"+newValue+"\n"+oldValue+"\n"+storageArea)
-    atualiza()
-})
+    addNote.addEventListener('click', function () {
+        let formattedKey = note.value.split('\n')[0].replaceAll(' ','_')
+        let key = formattedKey
+        let value = note.value
 
-let colors = ['#aed143', '#fbd249', '#fbd249', '#d35595', '#d35595']
+        localStorage.setItem(key, value)
+        console.log(localStorage.getItem(key))
+        list()
+    })
 
-function atualiza(){
+    clearNotes.addEventListener('click', () => {
+        localStorage.clear(); 
+        list()
+    })
 
-    document.getElementById('content').innerHTML = ''
-    for (let i = 0; i < localStorage.length; i++){
-    let key = localStorage.key(i)
-    let value = localStorage.getItem(key)
-    conteudo = `<div class='post-it'><h1>${key}</h1><p>${value}</p></div>`
-    document.getElementById('content').innerHTML += conteudo
-    let num = Math.ceil(Math.random()* colors.length - 1)
-    document.getElementsByClassName('post-it')[i].style.backgroundColor = colors[num]
+    function list(){
+        content.innerHTML = ''
+        for(i = 0; i < localStorage.length; i++){
+            content.innerHTML += `<h1>${localStorage.getItem(localStorage.key(i))}</h1>`.replaceAll('\n', '<br>')
+        }
     }
+
     
-}
-
-
-document.getElementById('delete').addEventListener('click', function (){
-    localStorage.clear()  
-    atualiza()
+    list()
 })
 
-atualiza()
