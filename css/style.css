@@ -1,15 +1,36 @@
-body{
-    background: url(../img/plywood_diff_1k.jpg);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
+body{
+    background: #8d99ae;
+}
+
+header{
+    height: 70px;
+    background-color: #2b2d42;
+    color: #edf2f4;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
 
 #content{
     display: flex;
-    justify-content:left;
+    justify-content:center;
     align-items:center;
     flex-wrap: wrap;
+    margin: 0 100px;
 }
-.post-it{
-    width: 300px;
-    height: 300px;
-    margin: 5px;
+.post-it, #newNote{
+    width: 270px;
+    height: 300px;  
+    margin: 5px 8px;
+    background-color: #edf2f4;
 }
