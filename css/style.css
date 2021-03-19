@@ -17,7 +17,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px;
+    padding: 0 5vw;
 }
 
 
@@ -26,13 +26,15 @@ header{
     justify-content:left;
     align-items:center;
     flex-wrap: wrap;
-    margin: 0 100px;
+    width: 90vw;
+    margin: 0 5vw;
 }
 .post-it {
-    width: 270px;
+    width: 22vw;
     height: 300px;  
-    margin: 5px 8px;
+    margin: 3px;
     background-color: #edf2f4;
+    padding: 10px;
 }
 
 textarea{
@@ -62,6 +64,15 @@ textarea{
 }
 .modal-content header button{
     width: 25px;
-    right: 0;
+    padding: 0;
     
+}
+
+button{
+    background: #8d99ae;
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 15px;
+    color: white;
 }
