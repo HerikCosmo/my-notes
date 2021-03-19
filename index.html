@@ -14,16 +14,21 @@
     <div id="container">
         <header>
             <h1>MyNotes</h1>
-            <button>Add Note</button>
+            <button id='open-modal'>Add Note</button>
         </header>
+        <div id="newNote" class='modal'>
+            <div class='modal-content'>
+                <header><button id='close-modal'>X</button></header>
+                
+                <textarea name="note" id="note" cols="42" rows="13"></textarea>
+                <button id="addNote">+</button>
+                <button id="clearNotes">Apagar Notas</button>
+            </div>
+        </div>
         <div id='content'>
             
         </div>
-        <div id="newNote">
-            <textarea name="note" id="note" cols="30" rows="10"></textarea>
-            <button id="addNote">+</button>
-            <button id="clearNotes">Apagar Notas</button>
-        </div>
+        
     </div>
     <script src="js/script.js"></script>
 </body>

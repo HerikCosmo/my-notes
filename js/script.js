@@ -3,9 +3,20 @@ window.addEventListener('load', function(){
     let addNote = document.getElementById('addNote')
     let clearNotes = document.getElementById('clearNotes')
     let content = document.getElementById('content')
-    let notes = JSON.parse(localStorage.getItem("notes")) ? JSON.parse(localStorage.getItem("notes")) : []
+    let notes = JSON.parse(localStorage.getItem("notes")) ?? []
+    let openModal = document.getElementById("open-modal")
+    let closeModal = document.getElementById("close-modal")
+    let modal = document.getElementsByClassName('modal')[0]
     list()
 
+    openModal.addEventListener('click', function(){
+        modal.style.display = "flex";
+    })
+
+    closeModal.addEventListener('click', function(){
+        modal.style.display = "none";
+    })
+    
     addNote.addEventListener('click', function () {
         let key = "notes"
         let newNote = note.value.replaceAll('\n','<br>')
