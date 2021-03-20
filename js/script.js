@@ -7,7 +7,6 @@ window.addEventListener('load', function(){
     let openModal = document.getElementById("open-modal")
     let closeModal = document.getElementById("close-modal")
     let modal = document.getElementsByClassName('modal')[0]
-    let keyNote = document.getElementsByClassName('idNote')
     list()
 
     openModal.addEventListener('click', function(){
@@ -37,7 +36,6 @@ window.addEventListener('load', function(){
                 content.innerHTML += `
                 <div class="post-it">
                     <h3>${total[i]}</h3>
-                    <input type='hidden' class='idNote' value='${i}'>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
             }
