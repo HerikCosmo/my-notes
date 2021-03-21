@@ -34,7 +34,7 @@ window.addEventListener('load', function(){
                 content.innerHTML += `
                 <div class="post-it">
                     <p>${notes[i]}<p>
-                    <button>edit</button>
+                    <button onclick='editNote(${i})'>edit</button>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
             }
@@ -48,13 +48,18 @@ window.addEventListener('load', function(){
         list()
     })
 
-    deleteNote = function(value){
-        notes.splice(value, 1)
+    deleteNote = function(indice){
+        notes.splice(indice, 1)
         localStorage.setItem("notes", JSON.stringify(notes))
         list()
     }
 
-    
+    editNote = function(indice){
+        let oldNote = notes[indice]
+        note.value = oldNote
+        modal.style.display = "flex";
+
+    }
 
     // document.addEventListener('storage')
     
