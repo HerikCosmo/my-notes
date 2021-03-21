@@ -21,7 +21,6 @@ window.addEventListener('load', function(){
         let key = "notes"
         let newNote = note.value.replaceAll('\n','<br>')
         notes.push(newNote)
-        console.log(notes)
         let value = JSON.stringify(notes)
         localStorage.setItem(key, value)
         note.value = ''
@@ -30,12 +29,12 @@ window.addEventListener('load', function(){
 
     function list(){
         content.innerHTML = ''
-        let total = JSON.parse(localStorage.getItem("notes"))
-        if(total != null){
-            for(i = 0; i < total.length; i++){
+        if(notes != null){
+            for(i = 0; i < notes.length; i++){
                 content.innerHTML += `
                 <div class="post-it">
-                    <h3>${total[i]}</h3>
+                    <p>${notes[i]}<p>
+                    <button>edit</button>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
             }

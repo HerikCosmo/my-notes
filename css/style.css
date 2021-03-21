@@ -24,19 +24,18 @@ header{
 #content{
     display: flex;
     justify-content:left;
-    align-items:center;
+    align-items: flex-start;
     flex-wrap: wrap;
     width: 90vw;
     margin: 0 5vw;
 }
 .post-it {
-    width: 22vw;
-    height: 300px;  
-    margin: 3px;
+    width: 44vw; 
+    margin: 3px 5px;
     background-color: #edf2f4;
     padding: 10px;
+    word-wrap:break-word;
 }
-
 textarea{
     resize: none;
 }
