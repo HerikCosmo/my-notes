@@ -5,17 +5,16 @@ window.addEventListener('load', function(){
     let content = document.getElementById('content')
     let notes = JSON.parse(localStorage.getItem("notes")) ?? []
     let openModal = document.getElementById("open-modal")
-    let closeModal = document.getElementById("close-modal")
-    let modal = document.getElementsByClassName('modal')[0]
+    let modal = document.getElementById('newNote')
+    let modalEdit = document.getElementsByClassName('modal')[1]
     list()
 
     openModal.addEventListener('click', function(){
         modal.style.display = "flex";
     })
 
-    closeModal.addEventListener('click', function(){
-        modal.style.display = "none";
-    })
+    closeModal = () => modal.style.display = "none"
+    
     
     addNote.addEventListener('click', function () {
         let key = "notes"
@@ -34,6 +33,7 @@ window.addEventListener('load', function(){
                 content.innerHTML += `
                 <div class="post-it">
                     <p>${notes[i]}<p>
+                    <input type='hidden' value="${i}">
                     <button onclick='editNote(${i})'>edit</button>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
@@ -56,10 +56,15 @@ window.addEventListener('load', function(){
 
     editNote = function(indice){
         let oldNote = notes[indice]
-        note.value = oldNote
-        modal.style.display = "flex";
-
+        note.value = oldNote.replaceAll('<br>', '\n')
+        modalEdit.style.display = "flex";
+        document.getElementById('updateNote').addEventListener('click', function(){
+            notes[indice] = note.value
+            localStorage.setItem("notes", JSON.stringify(notes))
+            list()
+        })
     }
+
 
     // document.addEventListener('storage')
     
