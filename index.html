@@ -32,10 +32,13 @@
         </div>
         <div id="updateNoteModal" class='modal'>
             <div class='modal-content'>
-                <header><button class='close-modal' onclick='closeEditModal()'>X</button></header>
-                
-                <textarea name="note" id="noteEdit" cols="42" rows="13"></textarea>
-                <button onclick='updateNote()'>editar</button>
+                <header><h3>Edit Note</h3><button class='close-modal' onclick='closeEditModal()'><i class="fas fa-times"></i></button></header>
+                <div class="txt">
+                    <textarea name="note" id="noteEdit" cols="42" rows="13"></textarea>
+                </div>
+                <div class='buttons'>
+                    <button onclick='updateNote()'>Edit</button>
+                </div>
             </div>
         </div>
         
