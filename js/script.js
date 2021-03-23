@@ -1,22 +1,24 @@
 window.addEventListener('load', function(){
-    let note = document.getElementById('note')
-    let addNote = document.getElementById('addNote')
+    let note = document.getElementById('noteAdd')
     let clearNotes = document.getElementById('clearNotes')
     let content = document.getElementById('content')
     let notes = JSON.parse(localStorage.getItem("notes")) ?? []
-    let openModal = document.getElementById("open-modal")
-    let modal = document.getElementById('newNote')
-    let modalEdit = document.getElementsByClassName('modal')[1]
+    let updateNote = document.getElementById('updateNote')
+    //let noteEdit = document.getElementById("noteEdit")
+
+    let addModal = document.getElementById('newNote')
+    let editModal = document.getElementById('updateNoteModal')
     list()
 
-    openModal.addEventListener('click', function(){
-        modal.style.display = "flex";
-    })
+    openAddModal = () => addModal.style.display = "flex"
+    closeAddModal = () => addModal.style.display = "none"
 
-    closeModal = () => modal.style.display = "none"
+    openEditModal = () => editModal.style.display = "flex"
+    closeEditModal = () => editModal.style.display = "none"
     
     
-    addNote.addEventListener('click', function () {
+    
+    addNote = () => {
         let key = "notes"
         let newNote = note.value.replaceAll('\n','<br>')
         notes.push(newNote)
@@ -24,7 +26,7 @@ window.addEventListener('load', function(){
         localStorage.setItem(key, value)
         note.value = ''
         list()
-    })
+    }
 
     function list(){
         content.innerHTML = ''
@@ -33,7 +35,6 @@ window.addEventListener('load', function(){
                 content.innerHTML += `
                 <div class="post-it">
                     <p>${notes[i]}<p>
-                    <input type='hidden' value="${i}">
                     <button onclick='editNote(${i})'>edit</button>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
@@ -54,16 +55,20 @@ window.addEventListener('load', function(){
         list()
     }
 
-    editNote = function(indice){
+    editNote = (indice) => {
         let oldNote = notes[indice]
-        note.value = oldNote.replaceAll('<br>', '\n')
-        modalEdit.style.display = "flex";
-        document.getElementById('updateNote').addEventListener('click', function(){
-            notes[indice] = note.value
-            localStorage.setItem("notes", JSON.stringify(notes))
-            list()
-        })
+        noteEdit.value = oldNote.replaceAll('<br>', '\n')
+        editModal.style.display = "flex";
+        updateNote.onclick = console.log(indice)
     }
+
+    // updateNote = () => {
+    //     let indice = 
+    //     notes[indice] = noteEdit.value.replaceAll('\n','<br>')
+    //     console.log(indice, notes[indice], noteEdit.value)
+    //     localStorage.setItem("notes", JSON.stringify(notes))
+    //     list()
+    // }
 
 
     // document.addEventListener('storage')

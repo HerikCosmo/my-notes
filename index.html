@@ -14,22 +14,22 @@
     <div id="container">
         <header>
             <h1>MyNotes</h1>
-            <button id='open-modal'>Add Note</button>
+            <button onclick="openAddModal()">Add Note</button>
         </header>
         <div id="newNote" class='modal'>
             <div class='modal-content'>
-                <header><button class='close-modal' onclick='closeModal()'>X</button></header>
+                <header><button onclick="closeAddModal()">X</button></header>
                 
-                <textarea name="note" id="note" cols="42" rows="13"></textarea>
-                <button id="addNote">+</button>
+                <textarea name="note" id="noteAdd" cols="42" rows="13"></textarea>
+                <button onclick="addNote()">+</button>
                 <button id="clearNotes">Apagar Notas</button>
             </div>
         </div>
-        <div id="newNote" class='modal'>
+        <div id="updateNoteModal" class='modal'>
             <div class='modal-content'>
-                <header><button class='close-modal' onclick='closeModal()'>X</button></header>
+                <header><button class='close-modal' onclick='closeEditModal()'>X</button></header>
                 
-                <textarea name="note" id="note" cols="42" rows="13"></textarea>
+                <textarea name="note" id="noteEdit" cols="42" rows="13"></textarea>
                 <button id='updateNote'>editar</button>
             </div>
         </div>
