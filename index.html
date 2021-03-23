@@ -8,21 +8,26 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    
+    <script src="https://kit.fontawesome.com/7a5265f908.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="container">
         <header>
             <h1>MyNotes</h1>
-            <button onclick="openAddModal()">Add Note</button>
+            <button onclick="openAddModal()">Add New Note</button>
         </header>
         <div id="newNote" class='modal'>
             <div class='modal-content'>
-                <header><button onclick="closeAddModal()">X</button></header>
+                <header><h3>New Note</h3><button onclick="closeAddModal()"><i class="fas fa-times"></i></button></header>
+                <div class="txt">
+                <textarea name="note" id="noteAdd"></textarea>
+                </div>
+                <div class='buttons'>
+                        <button onclick="addNote()">Add Note</button>
+                        <button class='danger' onclick="clearNotes()">Clear All Notes</button>
                 
-                <textarea name="note" id="noteAdd" cols="42" rows="13"></textarea>
-                <button onclick="addNote()">+</button>
-                <button onclick="clearNotes()">Apagar Notas</button>
+                </div>
             </div>
         </div>
         <div id="updateNoteModal" class='modal'>

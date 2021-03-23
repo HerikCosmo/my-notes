@@ -62,9 +62,11 @@ window.addEventListener('load', function(){
             for(i = 0; i < notes.length; i++){
                 content.innerHTML += `
                 <div class="post-it">
-                    <p>${notes[i]}<p>
-                    <button onclick='editNote(${i})'>edit</button>
-                    <button onclick='deleteNote(${i})'>delete</button>
+                    <div class='text'>
+                        <p>${notes[i]}<p>
+                    </div>
+                    <button onclick='editNote(${i})'>Edit</button>
+                    <button class='danger' onclick='deleteNote(${i})'>Delete</button>
                 </div>`
             }           
         } 
