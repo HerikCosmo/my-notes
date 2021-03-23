@@ -22,7 +22,7 @@
                 
                 <textarea name="note" id="noteAdd" cols="42" rows="13"></textarea>
                 <button onclick="addNote()">+</button>
-                <button id="clearNotes">Apagar Notas</button>
+                <button onclick="clearNotes()">Apagar Notas</button>
             </div>
         </div>
         <div id="updateNoteModal" class='modal'>
@@ -30,7 +30,7 @@
                 <header><button class='close-modal' onclick='closeEditModal()'>X</button></header>
                 
                 <textarea name="note" id="noteEdit" cols="42" rows="13"></textarea>
-                <button id='updateNote'>editar</button>
+                <button onclick='updateNote()'>editar</button>
             </div>
         </div>
         

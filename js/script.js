@@ -1,13 +1,14 @@
 window.addEventListener('load', function(){
-    let note = document.getElementById('noteAdd')
-    let clearNotes = document.getElementById('clearNotes')
-    let content = document.getElementById('content')
-    let notes = JSON.parse(localStorage.getItem("notes")) ?? []
-    let updateNote = document.getElementById('updateNote')
-    //let noteEdit = document.getElementById("noteEdit")
+    let noteTxt = document.getElementById('noteAdd') //textarea da nova anotação
+    let editNoteTxt = document.getElementById('noteEdit') // textarea da anotação de edição
+    let content = document.getElementById('content') // local dos post-it
+    let notes = JSON.parse(localStorage.getItem("notes")) ?? [] // notas
+    let addModal = document.getElementById('newNote') // modal de adição
+    let editModal = document.getElementById('updateNoteModal') // modal de edição
 
-    let addModal = document.getElementById('newNote')
-    let editModal = document.getElementById('updateNoteModal')
+    let controlEdit = [] // controle do indice para edit
+    const key = "notes" // chave padrao
+
     list()
 
     openAddModal = () => addModal.style.display = "flex"
@@ -15,17 +16,44 @@ window.addEventListener('load', function(){
 
     openEditModal = () => editModal.style.display = "flex"
     closeEditModal = () => editModal.style.display = "none"
-    
-    
-    
-    addNote = () => {
-        let key = "notes"
-        let newNote = note.value.replaceAll('\n','<br>')
+
+    addNote = () => {   
+        let newNote = noteTxt.value.replaceAll('\n','<br>')
         notes.push(newNote)
         let value = JSON.stringify(notes)
         localStorage.setItem(key, value)
-        note.value = ''
+        noteTxt.value = ''
         list()
+        closeAddModal()
+    }
+
+    clearNotes = () => {
+        localStorage.clear(); 
+        notes = []
+        list()
+    }
+    
+    deleteNote = function(indice){
+        notes.splice(indice, 1)
+        localStorage.setItem(key, JSON.stringify(notes))
+        list()
+    }
+    
+    editNote = (indice) => {
+        let oldNote = notes[indice]
+        editNoteTxt.value = oldNote.replaceAll('<br>', '\n')
+        controlEdit = []
+        controlEdit.push(indice)
+        editModal.style.display = "flex";
+    }
+
+    updateNote = () => {
+        let indice = controlEdit[0]
+        notes[indice] = editNoteTxt.value.replaceAll('\n','<br>')
+        localStorage.setItem(key, JSON.stringify(notes))
+        controlEdit = []
+        list()
+        closeEditModal()
     }
 
     function list(){
@@ -38,40 +66,7 @@ window.addEventListener('load', function(){
                     <button onclick='editNote(${i})'>edit</button>
                     <button onclick='deleteNote(${i})'>delete</button>
                 </div>`
-            }
-            
+            }           
         } 
-    }
-
-    clearNotes.addEventListener('click', () => {
-        localStorage.clear(); 
-        notes = []
-        list()
-    })
-
-    deleteNote = function(indice){
-        notes.splice(indice, 1)
-        localStorage.setItem("notes", JSON.stringify(notes))
-        list()
-    }
-
-    editNote = (indice) => {
-        let oldNote = notes[indice]
-        noteEdit.value = oldNote.replaceAll('<br>', '\n')
-        editModal.style.display = "flex";
-        updateNote.onclick = console.log(indice)
-    }
-
-    // updateNote = () => {
-    //     let indice = 
-    //     notes[indice] = noteEdit.value.replaceAll('\n','<br>')
-    //     console.log(indice, notes[indice], noteEdit.value)
-    //     localStorage.setItem("notes", JSON.stringify(notes))
-    //     list()
-    // }
-
-
-    // document.addEventListener('storage')
-    
+    }    
 })
-
