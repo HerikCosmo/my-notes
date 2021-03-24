@@ -10,14 +10,18 @@ body{
 }
 
 header{
-    height: 70px;
+    width: 100%;
     background-color: #2b2d42;
-    color: #edf2f4;
     font-weight: 300;
+    color: #edf2f4;
+}
+.cabecalho{
+    height: 70px;   
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5vw;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 
@@ -27,10 +31,10 @@ header{
     align-items: flex-start;
     flex-wrap: wrap;
     width: 90vw;
-    margin: 0 5vw;
+    margin: 0 auto;
 }
 .post-it {
-    width: 44vw; 
+    width: 100%; 
     margin: 3px 5px;
     background-color: rgb(224, 224, 224);
     padding: 10px;

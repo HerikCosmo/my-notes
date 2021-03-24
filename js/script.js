@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
     const key = "notes" // chave padrao
 
     list()
-
+    
     openAddModal = () => addModal.style.display = "flex"
     closeAddModal = () => addModal.style.display = "none"
 
