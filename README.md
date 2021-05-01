@@ -1,7 +1,7 @@
 <h1 align="center">My Notes</h1>
 
 <hr>
-###Status - Em Construção :construction:
+### Status - Em Construção :construction:
 
 <p align="center">
  <a href="#-sobre">Sobre o projeto</a> •
@@ -18,12 +18,12 @@
 
 
 
-###Sobre o Projeto:
+### Sobre o Projeto:
 <p>Uma aplicação para a criação de notas.
 
 <hr>
 
-###Funcionalidades:
+### Funcionalidades:
 - [x] Adicionar notas<br>
 - [x] Editar notas
 - [x] Excluir notas
@@ -31,11 +31,11 @@
 - [ ] Funcionar em formato markdown
 
 <hr>
-###Layout:
+### Layout:
 <h5>Web</h5>
 <img src='github/design.png' alt="Layout Web" />
 
-###Como executar o projeto:
+### Como executar o projeto:
 
 ```bash
 # Clone este repositório
@@ -46,7 +46,7 @@ $ git clone https://github.com/HerikCosmo/my-notes.git
 
 <hr>
 
-###Tecnologias:
+### Tecnologias:
 As seguintes ferramentas foram usadas na construção do projeto:
 - HTML5
 - CSS3
@@ -54,7 +54,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <hr> 
 
-###Autor:
+### Autor:
 
 <img src="https://avatars.githubusercontent.com/u/50126852?v=4" style="border-radius: 50%; width: 100px">
 
