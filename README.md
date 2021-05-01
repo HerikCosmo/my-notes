@@ -1,6 +1,7 @@
 <h1 align="center">My Notes</h1>
 
 <hr>
+
 ### Status - Em Construção :construction:
 
 <p align="center">
@@ -31,6 +32,7 @@
 - [ ] Funcionar em formato markdown
 
 <hr>
+
 ### Layout:
 <h5>Web</h5>
 <img src='github/design.png' alt="Layout Web" />
@@ -64,9 +66,10 @@ Feito por Herik Cosmo!
 </a>
 
 <a href="https://www.linkedin.com/in/herik-martins-3194b4208" target="_blank">
-  <img src="https://img.shields.io/static/v1?style=flat-square&logo=linkedin&message=Herik Martins&color=0A66C2&label=&logoColor=white&link=https://www.linkedin.com/in/herik-martins-3194b4208">
+  <img src="https://img.shields.io/static/v1?style=flat-square&logo=linkedin&message=Herik%20Martins&color=0A66C2&label=&logoColor=white&link=https://www.linkedin.com/in/herik-martins-3194b4208">
 </a>
 <hr>
+
 ### Licença:
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
